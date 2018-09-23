@@ -1,0 +1,49 @@
+#goReg{
+	width:30%;
+	background:#5eb542;
+}
+
+#regView{
+	
+	
+}
+
+#regDiv{
+	
+	height:100%;
+	width:100%
+}
+
+#registerBtn{
+	background:#5eb542;
+	margin-top:15px;
+	
+}
+
+#regContainer{
+	margin-top:12%
+	
+	
+}
+
+#regName{
+		border-bottom-color:#5eb542;
+		border-top-color:#5eb542;
+		border-width:1px;
+	
+}
+
+#regPwd{
+		border-bottom-color:#5eb542;
+		border-top-color:#5eb542;
+		border-width:1px;
+		
+	
+}
+
+.regText{
+	margin-top:10px;
+	margin-left:10px;
+	font-size:12pt;
+	
+}

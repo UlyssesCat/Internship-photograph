@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+
+	<title>Photo</title>
+    <link type="text/css" media="all" rel="stylesheet" href="./Photo_files/main.css" >
+    <link type="text/css" media="all" rel="stylesheet" href="./Photo_files/bar.style.css" >
+    <script type="text/javascript" async="" src="./Photo_files/ga.js"></script>
+    <script type="text/javascript" src="./Photo_files/alloyimage.js"></script>
+    <script type="text/javascript" src="./Photo_files/main2.js"></script>
+
+  <style type="text/css">
+    .rot1 {
+      -moz-transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+      -ms-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    }
+
+    .rot2 {
+      -moz-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+      -ms-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    }
+
+    .rot3 {
+      -moz-transform: rotate(270deg);
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg);
+      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+      -ms-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    }
+
+    #imageView_container{
+      border: 2px solid #000000;
+    }
+  </style>
+
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-browser.js"></script>
+  <script src="js/jquery.imageView.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+<div class="header">Photo</div>
+<div class="wrapper">
+  <div class="left" style="height: 540px;">
+    <h3>效果</h3>
+    <ul id="effects" class="effects">
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e0.png" alt="">原图</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e1.png" alt="">美肤效果</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e2.png" alt="">素描效果</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e3.png" alt="">自然增强</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e4.png" alt="">紫调效果</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e5.png" alt="">柔焦效果</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e6.png" alt="">复古效果</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e7.png" alt="">黑白效果</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e8.png" alt="">仿lomo</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e9.png" alt="">亮白增强</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e10.png" alt="">灰白效果</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e11.png" alt="">灰色效果</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e12.png" alt="">暖秋效果</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e13.png" alt="">木雕效果</div></li>
+      <li class="e_item"><div class="imgWrapper"><img src="./Photo_files/e14.png" alt="">粗糙效果</div></li>
+    </ul>
+  </div>
+  <div class="right" >
+    <div id="picWrapper" class="picWrapper">
+        <img src="./Photo_files/bulding.jpg" class="pic" id="pic" alt="" draggable="false" style="left: 243px; top: 91.5px;">
+
+        <div id="infoMsg" style="color:#00FF00;left: 593px; top: 291px;">
+          处理中
+        </div>
+    </div>
+    
+  </div>	
+</div>
+<div class="command">
+  <ul class="demoImg">
+    <li>示例图片 <br>demos</li>
+    <li class="d_item"><img src="./Photo_files/bulding.jpg"><div class="lab">建筑</div></li>
+    <li class="d_item"><img src="./Photo_files/big.jpg"><div class="lab">特写</div></li>
+    <li class="d_item"><img src="./Photo_files/small.jpg"><div class="lab">微距</div></li>
+    <li class="d_item"><img src="./Photo_files/girl.jpg"><div class="lab">人物</div></li>
+    <li class="d_item"><img src="./Photo_files/inner.jpg"><div class="lab">室内</div></li>
+    <li class="d_item"><img src="./Photo_files/pet.jpg"><div class="lab">宠物</div></li>
+    <li class="d_item"><img src="./Photo_files/scen.jpg"><div class="lab">风景</div></li>
+    <li class="d_item"><img src="./Photo_files/stop.jpg"><div class="lab">静物</div></li>
+  </ul>
+  <ul class="command_items">
+    <li>
+      <button class="button" >打开图片</button>
+      <button class="buttons" id="rotRight">右旋</button>
+      <button class="buttons" id="rotLeft">左旋</button>
+      <button class="buttons" id="bigger" onclick="imgToSize(100)">放大</button>
+      <button class="buttons" id="smaller" onclick="imgToSize(-100)">缩小</button>
+      <button class="buttons" id="reset" onclick="imgToSize(0)">重置</button>
+
+
+    </li>
+  </ul>
+  
+</div>
+<input type="file" name="open" id="open" class="open">
+
+<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23019343-9']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        var param = {
+            right: document.getElementById("rotRight"),
+            left: document.getElementById("rotLeft"),
+            img: document.getElementById("pic"),
+            rot: 0
+        };
+        var current = 0;
+        var fun = {
+            right: function () {
+                    var imgObj= document.getElementById('pic');
+                    current = (current-90)%360;
+                    imgObj.style.transform = 'rotate('+current+'deg)';
+            },
+            left: function () {
+                    var imgObj= document.getElementById('pic');
+                    current = (current+90)%360;
+                    imgObj.style.transform = 'rotate('+current+'deg)';
+            }
+        };
+        param.right.onclick = function () {
+            fun.right();
+            return false;
+        };
+        param.left.onclick = function () {
+            fun.left();
+            return false;
+        };
+
+      //  $('#picWrapper').imageView({ width: 800, height: 500 });
+
+    });
+
+    var size = 0;
+
+
+    //放大缩小图片
+    function imgToSize(size) {
+        var img = $("#pic");
+        const cimg=$("#pic");
+        var oWidth = img.width(); //取得图片的实际宽度
+        var oHeight = img.height(); //取得图片的实际高度
+
+        if (size==0){
+           img.src(cimg);
+        }
+        else if(size<0)
+        {
+            if (oWidth < 100 || oHeight < 100) {
+
+            }
+            else {
+                img.width(oWidth + size);
+                img.height(oHeight + size / oWidth * oHeight);
+            }
+        }
+        else
+        {
+                img.width(oWidth + size);
+                img.height(oHeight + size / oWidth * oHeight);
+        }
+    }
+
+
+
+</script>
+
+
+
+</body></html>

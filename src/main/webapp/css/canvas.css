@@ -1,0 +1,119 @@
+body{
+	
+	   background:url("../images/home-bg.jpg") no-repeat center;
+       background-attachment: fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+}
+
+.buttons{
+    height: 30px;
+	width:80px;
+    vertical-align: middle;
+    background: #de615e;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    text-shadow: none;
+	box-shadow:none;
+}
+
+#fileInput{
+    width:400px;
+	height:50px;
+	opacity:0;
+	z-index:1;
+	margin:0px;
+	
+	position:absolute;
+	left:30px;
+	top:0px;
+	cursor: pointer;
+}
+
+#oldCanvas{
+	margin-top:1.5%;
+}
+
+#canvas{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+#inputBtn{
+	text-align:center;
+
+	font-size:14pt;
+	width:400px;
+	height:50px;
+	z-index:2;
+}
+
+.input{
+	margin-top:10px;
+}
+
+.filter{
+	margin-top:20px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.filterBtns{
+	margin-top:30px;
+	width:180px;
+	height:45px;
+	
+}
+
+#leftBtns{
+	
+    margin-left:50%;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+
+#rightBtns{
+	
+	margin-right:50%;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+}
+
+#save{
+	margin-top:3%;
+	text-align:center;
+	font-size:14pt;
+	width:400px;
+	height:50px;
+	z-index:2;
+	background-color:#5eb542;
+}
+
+#saveIcon{
+	margin-bottom:2px;
+	margin-right:10px;
+	vertical-align: middle;	
+}
+
+#inputIcon{
+	margin-bottom:2px;
+	margin-right:10px;
+	vertical-align: middle;	
+}
+
